@@ -1,10 +1,12 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
-    mode: 'production',
     entry: {
         ice: './lib/index.tsx'
     }, //程序的入口
+    resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.jsx']
+    },
     output: {
         path: path.resolve(__dirname, 'dist/lib'),
         library: 'ICEUI',
@@ -16,11 +18,5 @@ module.exports = {
             test: /\.tsx?$/,
             loader: 'awesome-typescript-loader'
         }]
-    },
-    plugins:[
-        new htmlWebpackPlugin({
-            title:'ICE',
-            template:'index.html'
-        })
-    ]
+    }
 }
