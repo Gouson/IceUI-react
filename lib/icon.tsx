@@ -1,15 +1,15 @@
 import React from 'react'
+import classnames from 'classnames'
 import './importIcons'
-interface IconProps {
+import './icon.scss'
+interface IconProps extends React.SVGAttributes<SVGElement> {
     name: string
 }
-const Icon: React.FunctionComponent<IconProps> = (props) => {
+const Icon: React.FunctionComponent<IconProps> = ({ name, className, ...restProps }) => {
     return (
-        <span>
-            <svg>
-                <use xlinkHref={`#${props.name}`}></use>
-            </svg>
-        </span>
+        <svg className={classnames("iceui-icon", className)} {...restProps}>
+            <use xlinkHref={`#${name}`}></use>
+        </svg>
     )
 }
 export default Icon
