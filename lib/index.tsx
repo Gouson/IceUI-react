@@ -1,8 +1,27 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import Icon from './icon'
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import IconExample from './icon/icon.example';
+ReactDOM.render(<Router>
+    <div>
+        <header>
+            <div className="logo">
+                FUI
+            </div>
 
-ReactDOM.render(<div><Icon name="wechat" className="gaokexin" onMouseEnter={() => { console.log('enter') }} onMouseLeave={() => { console.log('leave') }} />
-    <Icon name="alipay" />
-    <Icon name="wechat" />
-</div>, document.querySelector('#root'))
+        </header>
+        <div>
+            <aside>
+                <h2>组件</h2>
+                <ul>
+                    <li>
+                        <Link to="/icon">Icon</Link>
+                    </li>
+                </ul>
+            </aside>
+            <main>
+                <Route path="/icon" component={IconExample} />
+            </main>
+        </div>
+    </div>
+</Router>, document.querySelector('#root'))
