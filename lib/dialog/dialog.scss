@@ -1,3 +1,4 @@
+
 .iceui-dialog {
     background: #FFF;
     position: fixed;
@@ -7,7 +8,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     &-musk {
         position: fixed;
         top: 0;
@@ -16,4 +16,13 @@
         height: 100%;
         background: fade-out(black, 0.5);
     }
+    &-header {
+
+    }
+
+    &-main {}
+
+    &-footer {}
+
+    &-close {}
 }
