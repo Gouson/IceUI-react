@@ -17,7 +17,14 @@
         background: fade-out(black, 0.5);
     }
     &-header {
-
+        &::after{
+            content:'';
+            width:100px;
+            height: 20px;
+            background: gray;
+            display: block;
+            border: 10px;
+        }
     }
 
     &-main {}

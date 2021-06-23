@@ -1,5 +1,6 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
+import './index.scss'
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import IconExample from './icon/icon.example';
 import DialogExample from './dialog/dialog.example';
