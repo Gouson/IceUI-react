@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import Dialog, { alert } from './dialog'
+import Dialog, { alert, confirm, modal } from './dialog'
 const DialogExample: React.FunctionComponent = () => {
     const [x, setX] = useState(false);
     const [y, setY] = useState(false);
+    const openModal = () => {
+        const close = modal(<h1 >你好 <button onClick={() => { close() }}>关闭</button></h1>)
+    }
+
     return (
         <div>
             <div>
@@ -32,7 +36,9 @@ const DialogExample: React.FunctionComponent = () => {
             </div>
             <div>
                 <h1>3</h1>
-                <button onClick={() => alert('1')}>点击</button>
+                <button onClick={() => alert('1')}>alert</button>
+                <button onClick={() => confirm('1', () => { }, () => { })}>confirm</button>
+                <button onClick={openModal}>modal</button>
             </div>
         </div>
     );
