@@ -1,35 +1,38 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 import './index.scss'
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import IconExample from './icon/icon.example';
-import DialogExample from './dialog/dialog.example';
-import LayoutExample from './layout/layout.example';
+import { HashRouter as Router, Route, NavLink } from 'react-router-dom';
+import IconDemo from './lib/icon/icon.demo';
+import DialogExample from './lib/dialog/dialog.example';
+import LayoutExample from './lib/layout/layout.example';
+// tslint:disable-next-line
+import logo from './lib/icons/logo.jpg'
+// const logo = require('./lib/icons/logo.jpg')
 ReactDOM.render(<Router>
     <div>
         <header>
             <div className="logo">
-                test
+                <img src={logo} alt="" style={{ width: '64px', height: '64px' }} />
             </div>
 
         </header>
         <div>
             <aside>
                 <h2>组件</h2>
-                <ul>
+                <ul className="example-ul">
                     <li>
-                        <Link to="/icon">Icon</Link>
+                        <NavLink to="/icon">Icon</NavLink>
                     </li>
                     <li>
-                        <Link to="/dialog">Dialog</Link>
+                        <NavLink to="/dialog">Dialog</NavLink>
                     </li>
                     <li>
-                        <Link to="/layout">Layout</Link>
+                        <NavLink to="/layout">Layout</NavLink>
                     </li>
                 </ul>
             </aside>
             <main>
-                <Route path="/icon" component={IconExample} />
+                <Route path="/icon" component={IconDemo} />
                 <Route path="/dialog" component={DialogExample} />
                 <Route path="/layout" component={LayoutExample} />
             </main>

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "declaration": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "module": "esnext",
     "target": "es5",
     "lib": [
@@ -27,8 +27,8 @@
     "noUnusedLocals": true
   },
   "include": [
-    "types/**/*",
-    "lib/**/*"
+    "lib/**/*",
+    "./types/*.d.ts"
   ],
   "exclude": [
     "node_modules",

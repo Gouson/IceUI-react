@@ -1,7 +1,7 @@
 const path = require('path')
 module.exports = {
     entry: {
-        ice: './lib/index.tsx'
+        ice: './index.tsx'
     }, //程序的入口
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
@@ -10,7 +10,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist/lib'),
         library: 'ICEUI',
         libraryTarget: 'umd'
-
     },
     module: { //如何解析
         rules: [{
@@ -22,6 +21,9 @@ module.exports = {
         }, {
             test: /\.scss$/,
             use: ['style-loader', 'css-loader', 'sass-loader']
+        }, {
+            test: /\.(png|jpg|jpeg|gif)$/,
+            use: ['file-loader']
         }]
     }
 }

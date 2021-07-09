@@ -20,3 +20,15 @@ button {
         margin-right: 0;
     }
 }
+
+.example-ul {
+    li a {
+        &.active {
+            background-color: greenyellow;
+        }
+    }
+}
+
+pre {
+    font-family: "Fira code Medium", Consolas, monospace;
+}
